@@ -1,2 +1,155 @@
-# Warlurk-Hub
-Child minder services
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Warlurk Hub — Safe Babysitting (With Guardian Approval)</title>
+  <meta name="description" content="Warlurk Hub — local, friendly babysitting help. All bookings handled through a parent/guardian." />
+  <style>
+    :root{--bg:#0b0f14;--card:#0f1720;--accent:#ff6a3d;--muted:#98a0ab;--glass:rgba(255,255,255,0.03)}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter, system-ui, Arial, sans-serif;background:linear-gradient(180deg,#07101a 0%, #091018 100%);color:#e6eef6}
+    .container{max-width:920px;margin:40px auto;padding:24px}
+    header{display:flex;gap:16px;align-items:center}
+    .logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#ffb07a);display:flex;align-items:center;justify-content:center;font-weight:800;color:#081018}
+    h1{margin:0;font-size:22px}
+    p.lead{color:var(--muted);margin-top:6px}
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:18px;margin-top:20px}
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,12,0.6)}
+    .muted{color:var(--muted)}
+    .section-title{font-weight:700;margin-bottom:8px}
+    ul{padding-left:18px;margin:8px 0}
+    .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:var(--glass);color:var(--muted);font-size:13px;margin-right:8px}
+    .cta{display:inline-block;background:var(--accent);color:#081018;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700}
+    form label{display:block;font-size:13px;margin-top:10px}
+    input, textarea, select{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:#071021;color:inherit;font-size:14px;margin-top:6px}
+    input[type=checkbox]{width:auto}
+    .small{font-size:13px;color:var(--muted)}
+    footer{margin-top:18px;color:var(--muted);font-size:13px}
+    @media (max-width:880px){.grid{grid-template-columns:1fr;}.container{margin:18px;padding:16px}}
+    .note{background:linear-gradient(90deg, rgba(255,106,61,0.06), rgba(255,176,122,0.03));padding:12px;border-radius:10px;color:var(--muted);}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">WH</div>
+      <div>
+        <h1>Warlurk Hub — Childminding (Under Guardian Supervision)</h1>
+        <p class="lead">Local, reliable help for short babysitting sessions — all bookings and communication handled through a parent or guardian.</p>
+      </div>
+    </header>
+
+    <div class="grid">
+      <main>
+        <div class="card">
+          <div class="section-title">About Me</div>
+          <p class="muted">Hi — I'm a responsible local teenager offering short, daytime babysitting for neighbours and family friends. I always work with parent/guardian consent and never babysit alone at night or for families I don't know.</p>
+
+          <div style="margin-top:12px">
+            <span class="pill">Age: under 18</span>
+            <span class="pill">Preferred: kids 1–10</span>
+            <span class="pill">Sessions: short / daytime</span>
+          </div>
+
+          <hr style="margin:14px 0;border:none;border-top:1px solid rgba(255,255,255,0.03)">
+
+          <div class="section-title">Services I Offer</div>
+          <ul>
+            <li>Playtime & supervision (indoor activities)</li>
+            <li>Snack-time supervision (no cooking of hot meals)</li>
+            <li>Homework help for younger kids</li>
+            <li>Short school-run assistance (only with adult present)</li>
+          </ul>
+
+          <div style="margin-top:10px" class="note"><strong>Important:</strong> I will only accept bookings where a parent or guardian approves, attends nearby where required, and handles payment/communication.</div>
+
+          <hr style="margin:14px 0;border:none;border-top:1px solid rgba(255,255,255,0.03)">
+
+          <div class="section-title">Testimonials</div>
+          <p class="small">"Great with my little sister — punctual and patient." — Aunt L (family)</p>
+          <p class="small">"Trusted to watch my neighbour's toddler for a short while." — Mrs. K (neighbour)</p>
+
+        </div>
+
+        <div style="height:14px"></div>
+
+        <div class="card">
+          <div class="section-title">Safety & Rules</div>
+          <ul>
+            <li class="small">I will not accept overnight or late-night sittings.</li>
+            <li class="small">I cannot administer medicine or perform medical care.</li>
+            <li class="small">All bookings must be approved and arranged by a parent/guardian.</li>
+            <li class="small">Parent/guardian contact details are required before each booking.</li>
+          </ul>
+        </div>
+
+      </main>
+
+      <aside>
+        <div class="card">
+          <div class="section-title">Request a Booking</div>
+          <p class="small">Fill out the form below — a parent/guardian must submit and confirm. Replace the placeholder email in the form handler with your parent/guardian email address or use it to send to your parent's email.</p>
+
+          <!-- NOTE: This form uses a mailto link as a simple example. For a real live site use a server-side form handler or Netlify Forms and ensure a parent/guardian email is used. -->
+          <form action="mailto:parent@example.com" method="POST" enctype="text/plain">
+            <label>Parent/Guardian Name
+              <input type="text" name="parent_name" required placeholder="e.g. Maria Smith">
+            </label>
+
+            <label>Parent/Guardian Email
+              <input type="email" name="parent_email" required placeholder="parent@example.com">
+            </label>
+
+            <label>Child's First Name & Age
+              <input type="text" name="child_info" required placeholder="e.g. Jamie, 4">
+            </label>
+
+            <label>Date & Time Needed
+              <input type="text" name="datetime" required placeholder="e.g. 20 Dec 2025, 10:00–13:00">
+            </label>
+
+            <label>Location (general area only)
+              <input type="text" name="area" required placeholder="e.g. Cambridge area">
+            </label>
+
+            <label>Any important notes for parent to confirm
+              <textarea name="notes" rows="3" placeholder="Allergies, routines, emergency contact for parent"></textarea>
+            </label>
+
+            <label style="margin-top:10px"><input type="checkbox" name="guardian_confirm" required> I confirm I am the parent or legal guardian authorising this request.</label>
+
+            <div style="margin-top:12px">
+              <button class="cta" type="submit">Send Booking Request</button>
+            </div>
+
+            <p class="small" style="margin-top:12px">If you're testing, replace <code>mailto:parent@example.com</code> in the form action with your parent's email to send directly from the visitor's device. For professional use, set up a proper form handler (Netlify Forms, Formspree, or similar) that routes to your parent's email.</p>
+          </form>
+        </div>
+
+        <div style="height:12px"></div>
+
+        <div class="card">
+          <div class="section-title">Contact (via Guardian)</div>
+          <p class="small">To protect both you and me, please have the parent/guardian email or call using the details below. Do not contact me directly without a parent present.</p>
+          <p class="small"><strong>Parent contact placeholder:</strong><br> parent@example.com<br>Phone via parent/guardian only</p>
+          <a class="cta" href="#" onclick="alert('Give this site to your parent/guardian to review — they should contact you directly.');return false;">Share with parent</a>
+        </div>
+
+      </aside>
+    </div>
+
+    <footer class="muted">
+      <p>Safety reminder: This site is for advertising supervised, short daytime babysitting only. Always work with a parent/guardian. Do not accept requests that seem unsafe. For official childminder registration or full professional care, adults should register and obtain DBS/background checks where required.</p>
+    </footer>
+  </div>
+
+  <!--
+    HOW TO USE:
+    1) Save this file as warlurk_childminder.html and open locally to preview.
+    2) Ask a parent/guardian to replace mailto:parent@example.com with their email in the form action.
+    3) To publish: upload to GitHub Pages, Netlify, or Vercel. For forms, consider Netlify Forms or Formspree.
+    4) Keep your parent/guardian involved in every booking and never share private contact details publicly.
+  -->
+</body>
+</html>
